@@ -39,7 +39,6 @@ class TimelineBuilderTest extends OptionsProvider
         $this->assertGreaterThan(0, strpos($userTimeline->getWidgetJs(), 'widgets.js'));
     }
 
-
     public function testWidgetRendering()
     {
         $userTimeline = new TimelineBuilder($this->widgetOptions);

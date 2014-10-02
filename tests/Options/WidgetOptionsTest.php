@@ -25,7 +25,6 @@ class WidgetOptionsTest extends OptionsProvider
         $this->assertEquals('customClass', $widgetOptions->getClass());
     }
 
-
     public function testOptionsCanBeSetManually()
     {
         $widgetOptions = new WidgetOptions();
