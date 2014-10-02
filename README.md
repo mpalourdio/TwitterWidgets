@@ -10,3 +10,55 @@
 
 TwitterWidgets
 ==============
+
+PHP library that helps rendering twitter embedded timelines
+
+Requirements
+============
+PHP 5.5+ - Only Composer installation supported
+
+Usage
+=====
+
+```php
+$widgetOptions = new WidgetOptions($options);
+$userTimeline  = new TimelineBuilder($widgetOptions);
+echo $userTimeline->renderWidget();
+```
+
+```$options``` can handle theses parameters :  https://dev.twitter.com/web/embedded-timelines#options
+
+Their PHP equivalent as array keys to use in the view helper are  :
+
+```php
+'class'           => 'A css class, by default it will be twitter-timeline',
+'href'            => 'The link to the timeline',
+'hrefText'        => 'A title for your timeline to display',
+'dataWidgetId'    => 'Your data widget ID : must be a string (!)',
+'dataTheme'       => 'ex: dark',
+'dataLinkColor'   => 'ex: #cc0000',
+'width'           => 300 (integer),
+'height'          => 400 (integer,
+'dataChrome'      => 'noheader nofooter noborders noscrollbar transparent', => a string with options separated by a single space
+'dataBorderColor' => 'border color used by the widget',
+'language'        => 'The widget language detected from the page, based on the HTML lang attribute of your content. You can also set the HTML lang attribute on the embed code itself.',
+'dataTweetLimit'  => 20,
+'dataRelated'     => 'benward,endform',
+'dataAriaPolite'  => 'polite or assertive',
+```
+
+The ```TimelineBuilder#renderWidget()``` method accepts a boolean to disable the javascript code added to each widget. Useful if you have more that one widget to avoid JS overhead.
+
+When disabled, to add only one time the needed javascript to your HTML code, use [OneTimeJsProvider#getOneTimeWidgetJs()](https://github.com/mpalourdio/TwitterWidgets/blob/master/src/Assets/OneTimeJsProvider.php) just before your ```</body>```
+
+More informations here : https://dev.twitter.com/web/javascript/loading
+
+ZF2
+===
+
+A ZF2 plugin is available here : https://github.com/mpalourdio/zf2-twitter-widget
+
+TWIG
+====
+
+Coming soon !
