@@ -21,7 +21,7 @@ class OptionsProvider extends \PHPUnit_Framework_TestCase
                         'class'           => 'customClass',
                         'href'            => 'href',
                         'hrefText'        => 'hrefText',
-                        'dataWidgetId'    => 666,
+                        'dataWidgetId'    => '666',
                         'dataTheme'       => 'dataTheme',
                         'dataLinkColor'   => 'dataLinkColor',
                         'width'           => 666,

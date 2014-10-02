@@ -32,7 +32,7 @@ class WidgetOptionsTest extends OptionsProvider
             ->setClass('customClass')
             ->setHref('href')
             ->setHrefText('hrefText')
-            ->setDataWidgetId(666)
+            ->setDataWidgetId('666')
             ->setDataTheme('dataTheme')
             ->setDataLinkColor('dataLinkColor')
             ->setWidth(666)
