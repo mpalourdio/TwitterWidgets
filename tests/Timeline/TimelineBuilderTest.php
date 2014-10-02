@@ -31,14 +31,6 @@ class TimelineBuilderTest extends OptionsProvider
         $this->assertInstanceOf(TimelineBuilder::class, $userTimeline);
     }
 
-    public function testUserTimelineExtendsAbstractTimeline()
-    {
-        $widgetOptions = $this->getMock(WidgetOptions::class);
-        $userTimeline  = new TimelineBuilder($widgetOptions);
-
-        $this->assertGreaterThan(0, strpos($userTimeline->getWidgetJs(), 'widgets.js'));
-    }
-
     public function testWidgetRendering()
     {
         $userTimeline = new TimelineBuilder($this->widgetOptions);

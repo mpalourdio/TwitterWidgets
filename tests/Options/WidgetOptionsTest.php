@@ -38,7 +38,7 @@ class WidgetOptionsTest extends OptionsProvider
             ->setWidth(666)
             ->setHeight(666)
             ->setDataChrome('noheader nofooter noborders noscrollbar transparent')
-            ->setDataBorderColor('dataCordelColor')
+            ->setDataBorderColor('dataBorderColor')
             ->setLanguage('language')
             ->setDataTweetLimit(666)
             ->setDataRelated('dataRelated')

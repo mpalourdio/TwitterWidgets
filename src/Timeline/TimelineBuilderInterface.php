@@ -16,10 +16,5 @@ interface TimelineBuilderInterface
      * @param  bool $addJs
      * @return string
      */
-    public function buildWidget($addJs = true);
-
-    /**
-     * @return string
-     */
-    public function renderWidget();
+    public function renderWidget($addJs = true);
 }
