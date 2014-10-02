@@ -117,8 +117,8 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      *
      * ARIA is an accessibility system that aids people using assistive technology interacting with dynamic web content.
      * Read more about ARIA on W3C’s website. By default, the embedded timeline uses the least obtrusive
-     * setting: aria-polite="polite". If you’re using an embedded timeline as a primary source of content on your page,
-     * you may wish to override this to the assertive setting, using data-aria-polite="assertive".
+     * setting: aria-polite="polite". If you’re using an embedded timeline as a primary source of content on your
+     * page, you may wish to override this to the assertive setting, using data-aria-polite="assertive".
      */
     protected $dataAriaPolite;
 
