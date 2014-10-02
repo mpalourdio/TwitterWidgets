@@ -315,7 +315,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getDataWidgetId()
     {
@@ -323,7 +323,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
     }
 
     /**
-     * @param  int $dataWidgetId
+     * @param  string $dataWidgetId
      * @throws InvalidArgumentException
      * @return self
      *
