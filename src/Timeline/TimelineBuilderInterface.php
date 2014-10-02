@@ -10,7 +10,16 @@
 
 namespace TwitterWidgets\Timeline;
 
-class FavoritesTimeline
+interface TimelineBuilderInterface
 {
+    /**
+     * @param  bool $addJs
+     * @return string
+     */
+    public function buildWidget($addJs = true);
 
+    /**
+     * @return string
+     */
+    public function renderWidget();
 }
