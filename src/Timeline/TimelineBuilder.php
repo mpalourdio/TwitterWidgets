@@ -32,21 +32,22 @@ class TimelineBuilder implements TimelineBuilderInterface
     public function buildWidget($addJs = true)
     {
         $options = $this->options->toArray();
+
         $widget  =
-            '<a' . ((null !== $options['class']) ? ' class="' . $options['class'] . '"' : '') .
-            ((null !== $options['href']) ? ' href="' . $options['href'] . '"' : '') .
-            ((null !== $options['data_widget_id']) ? ' data-widget-id="' . $options['data_widget_id'] . '"' : '') .
-            ((null !== $options['data_theme']) ? ' data-theme="' . $options['data_theme'] . '"' : '') .
-            ((null !== $options['data_link_color']) ? ' data-link-color="' . $options['data_link_color'] . '"' : '') .
-            ((null !== $options['width']) ? ' width="' . $options['width'] . '"' : '') .
-            ((null !== $options['height']) ? ' height="' . $options['height'] . '"' : '') .
-            ((null !== $options['data_chrome']) ? ' data-chrome="' . $options['data_chrome'] . '"' : '') .
-            ((null !== $options['data_border_color']) ? ' data-border-color="' . $options['data_border_color'] . '"' : '') .
-            ((null !== $options['language']) ? ' lang="' . $options['language'] . '"' : '') .
-            ((null !== $options['data_tweet_limit']) ? ' data-tweet-limit="' . $options['data_tweet_limit'] . '"' : '') .
-            ((null !== $options['data_related']) ? ' data-related="' . $options['data_related'] . '"' : '') .
-            ((null !== $options['data_aria_polite']) ? ' data-aria-polite="' . $options['data_aria_polite'] . '"' : '') .
-            '>' . ((null !== $options['href_text']) ? $options['href_text'] : '') . '</a>';
+        '<a' . ((null !== $options['class']) ? ' class="' . $options['class'] . '"' : '') .
+        ((null !== $options['href']) ? ' href="' . $options['href'] . '"' : '') .
+        ((null !== $options['data_widget_id']) ? ' data-widget-id="' . $options['data_widget_id'] . '"' : '') .
+        ((null !== $options['data_theme']) ? ' data-theme="' . $options['data_theme'] . '"' : '') .
+        ((null !== $options['data_link_color']) ? ' data-link-color="' . $options['data_link_color'] . '"' : '') .
+        ((null !== $options['width']) ? ' width="' . $options['width'] . '"' : '') .
+        ((null !== $options['height']) ? ' height="' . $options['height'] . '"' : '') .
+        ((null !== $options['data_chrome']) ? ' data-chrome="' . $options['data_chrome'] . '"' : '') .
+        ((null !== $options['data_border_color']) ? ' data-border-color="' . $options['data_border_color'] . '"' : '') .
+        ((null !== $options['language']) ? ' lang="' . $options['language'] . '"' : '') .
+        ((null !== $options['data_tweet_limit']) ? ' data-tweet-limit="' . $options['data_tweet_limit'] . '"' : '') .
+        ((null !== $options['data_related']) ? ' data-related="' . $options['data_related'] . '"' : '') .
+        ((null !== $options['data_aria_polite']) ? ' data-aria-polite="' . $options['data_aria_polite'] . '"' : '') .
+        '>' . ((null !== $options['href_text']) ? $options['href_text'] : '') . '</a>';
 
         if ($addJs) {
             return $widget . "\n<script>" . $this->getWidgetJs() . "</script>";
