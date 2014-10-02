@@ -1,0 +1,35 @@
+{
+    "name":         "mpalourdio/twitter-widgets",
+    "description":  "PHP library that helps rendering twitter embedded timelines",
+    "license":      "MIT",
+    "keywords":     [
+        "twitter",
+        "widget",
+        "timeline"
+    ],
+    "homepage":     "https://github.com/mpalourdio/TwitterWidgets",
+    "authors":      [
+        {
+            "name":     "@mpalourdio",
+            "email":    "mpalourdio@gmail.com",
+            "homepage": "https://github.com/mpalourdio"
+        }
+    ],
+    "require":      {
+        "php": ">=5.5"
+    },
+    "require-dev":  {
+        "phpunit/phpunit":           "4.*",
+        "squizlabs/php_codesniffer": "1.5.*"
+    },
+    "autoload":     {
+        "psr-4": {
+            "TwitterWidgets\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TwitterWidgetsTest\\": "tests/"
+        }
+    }
+}
