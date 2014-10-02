@@ -44,7 +44,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
     protected $hrefText;
 
     /**
-     * @var int
+     * @var string
      *
      * Your widget ID
      */
@@ -326,14 +326,18 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      * @param  int $dataWidgetId
      * @throws InvalidArgumentException
      * @return self
+     *
+     * Note: long integers will be converted to float (32 bits). Give this setter a string
      */
     public function setDataWidgetId($dataWidgetId)
     {
-        if (!is_int($dataWidgetId)) {
-            throw new InvalidArgumentException('Integer expected for dataWidgetId parameter');
+        if (!is_string($dataWidgetId)) {
+            throw new InvalidArgumentException(
+                'String is expected for dataWidgetId (long int can lead to float conversion)'
+            );
         }
 
-        $this->dataWidgetId = (int) $dataWidgetId;
+        $this->dataWidgetId = $dataWidgetId;
 
         return $this;
     }
