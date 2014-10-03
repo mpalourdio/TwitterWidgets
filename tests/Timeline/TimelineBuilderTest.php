@@ -31,10 +31,11 @@ class TimelineBuilderTest extends OptionsProvider
         $this->assertInstanceOf(TimelineBuilder::class, $userTimeline);
     }
 
-    public function testWidgetRendering()
+    public function testWidgetRenderingWithOrWithoutJs()
     {
         $userTimeline = new TimelineBuilder($this->widgetOptions);
 
-        $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(), 'class="customClass"'));
+        $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(), 'widgets.js'));
+        $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(false), 'class="customClass"'));
     }
 }
