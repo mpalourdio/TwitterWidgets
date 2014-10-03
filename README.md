@@ -61,7 +61,7 @@ More informations here : https://dev.twitter.com/web/javascript/loading
 ZF2
 ===
 
-A ZF2 plugin is available here : https://github.com/mpalourdio/zf2-twitter-widget
+A ZF2 view helper is available here : https://github.com/mpalourdio/zf2-twitter-widget
 
 TWIG
 ====
