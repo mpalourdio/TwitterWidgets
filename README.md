@@ -66,4 +66,4 @@ A ZF2 view helper is available here : https://github.com/mpalourdio/zf2-twitter-
 TWIG
 ====
 
-Coming soon !
+A twig extension is available here : https://github.com/mpalourdio/TwitterWidgetBundle
