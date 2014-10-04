@@ -18,9 +18,9 @@ use Zend\Filter\Word\SeparatorToSeparator;
 
 class TimelineBuilder implements TimelineBuilderInterface
 {
-    private $options;
-    private $addJs;
-    private $filteredAttr;
+    protected $options;
+    protected $addJs;
+    protected $filteredAttr;
 
     /**
      * @param WidgetOptionsInterface $options
@@ -33,7 +33,7 @@ class TimelineBuilder implements TimelineBuilderInterface
     /**
      * @return string
      */
-    private function buildWidget()
+    protected function buildWidget()
     {
         $attributesList = $this->filteredAttr;
         $widget         = '<a';
@@ -73,7 +73,7 @@ class TimelineBuilder implements TimelineBuilderInterface
      *
      * Add the necessary code for a single widget
      */
-    private function getSingleWidgetJs()
+    protected function getSingleWidgetJs()
     {
         return '!function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? \'http\' : \'https\';
@@ -89,7 +89,7 @@ class TimelineBuilder implements TimelineBuilderInterface
     /**
      * @return array
      */
-    private function filterAttr()
+    protected function filterAttr()
     {
         if (!is_array($this->options)) {
             $this->options = $this->options->toArray();
