@@ -10,6 +10,7 @@
 
 namespace TwitterWidgetsTest\Timeline;
 
+use ReflectionClass;
 use TwitterWidgets\Options\WidgetOptions;
 use TwitterWidgets\Timeline\TimelineBuilder;
 use TwitterWidgetsTest\Assets\OptionsProvider;
@@ -25,26 +26,60 @@ class TimelineBuilderTest extends OptionsProvider
 
     public function testUserTimeline()
     {
-        $widgetOptions = $this->getMock(WidgetOptions::class);
-        $userTimeline  = new TimelineBuilder($widgetOptions);
+        $widgetOptions   = $this->getMock(WidgetOptions::class);
+        $timelineBuilder = new TimelineBuilder($widgetOptions);
 
-        $this->assertInstanceOf(TimelineBuilder::class, $userTimeline);
+        $this->assertInstanceOf(TimelineBuilder::class, $timelineBuilder);
     }
 
-    public function testWidgetRenderingWithOrWithoutJs()
+    public function testWidgetRenderingWithJs()
     {
-        $userTimeline = new TimelineBuilder($this->widgetOptions);
+        $timelineBuilder = $this
+            ->getMockBuilder(TimelineBuilder::class)
+            ->disableOriginalConstructor()
+            ->setMethods(['filterAttr', 'getSingleWidgetJs'])
+            ->getMock();
 
-        $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(), 'widgets.js'));
-        $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(false), 'class="customClass"'));
+        $timelineBuilder
+            ->expects($this->once())
+            ->method('filterAttr')
+            ->willReturn([]);
+
+        $timelineBuilder
+            ->expects($this->once())
+            ->method('getSingleWidgetJs')
+            ->willReturn('achievement unlocked!');
+
+        $this->assertGreaterThan(0, strpos($timelineBuilder->renderWidget(), 'achievement unlocked!'));
+    }
+
+    public function testWidgetRenderingWithoutJs()
+    {
+        $timelineBuilder = $this
+            ->getMockBuilder(TimelineBuilder::class)
+            ->disableOriginalConstructor()
+            ->setMethods(['filterAttr', 'getSingleWidgetJs'])
+            ->getMock();
+
+        $timelineBuilder
+            ->expects($this->once())
+            ->method('filterAttr')
+            ->willReturn([]);
+
+        $timelineBuilder
+            ->expects($this->never())
+            ->method('getSingleWidgetJs')
+            ->willReturn('achievement unlocked!');
+
+        $this->assertEquals(0, strpos($timelineBuilder->renderWidget(false), 'achievement unlocked!'));
     }
 
     public function testUnsetValuesAreNotRendered()
     {
         $this->widgetOptions->setClass(null);
-        $userTimeline = new TimelineBuilder($this->widgetOptions);
+        $timelineBuilder = new TimelineBuilder($this->widgetOptions);
 
-        $this->assertEquals(0, strpos($userTimeline->renderWidget(false), 'class="customClass"'));
+        $this->assertEquals(0, strpos($timelineBuilder->renderWidget(false), 'class="customClass"'));
     }
 
     /**
@@ -52,8 +87,21 @@ class TimelineBuilderTest extends OptionsProvider
      */
     public function testNonBoolThrowException()
     {
-        $widgetOptions = $this->getMock(WidgetOptions::class);
-        $userTimeline  = new TimelineBuilder($widgetOptions);
-        $userTimeline->renderWidget('helloyesthisisdog');
+        $widgetOptions   = $this->getMock(WidgetOptions::class);
+        $timelineBuilder = new TimelineBuilder($widgetOptions);
+
+        $timelineBuilder->renderWidget('helloyesthisisdog');
+    }
+
+    public function testOneTimeJsReturnsNeededCode()
+    {
+        $widgetOptions   = $this->getMock(WidgetOptions::class);
+        $timelineBuilder = new TimelineBuilder($widgetOptions);
+
+        $reflected = new ReflectionClass(TimelineBuilder::class);
+        $method    = $reflected->getMethod('getSingleWidgetJs');
+        $method->setAccessible(true);
+
+        $this->assertGreaterThan(0, strpos($method->invokeArgs($timelineBuilder, []), 'widgets.js'));
     }
 }
