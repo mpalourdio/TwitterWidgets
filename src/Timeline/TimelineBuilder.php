@@ -10,6 +10,7 @@
 
 namespace TwitterWidgets\Timeline;
 
+use InvalidArgumentException;
 use TwitterWidgets\Options\WidgetOptionsInterface;
 use Zend\Filter\FilterChain;
 use Zend\Filter\StringToLower;
@@ -54,9 +55,13 @@ class TimelineBuilder implements TimelineBuilderInterface
     /**
      * @param  bool $addJs
      * @return string
+     * @throws InvalidArgumentException
      */
     public function renderWidget($addJs = true)
     {
+        if (!is_bool($addJs)) {
+            throw new InvalidArgumentException('TimelineBuilder#renderWidget expects a boolean as parameter');
+        }
         $this->addJs        = $addJs;
         $this->filteredAttr = $this->filterAttr();
 

@@ -38,4 +38,14 @@ class TimelineBuilderTest extends OptionsProvider
         $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(), 'widgets.js'));
         $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(false), 'class="customClass"'));
     }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testNonBoolThrowException()
+    {
+        $widgetOptions = $this->getMock(WidgetOptions::class);
+        $userTimeline  = new TimelineBuilder($widgetOptions);
+        $userTimeline->renderWidget('helloyesthisisdog');
+    }
 }
