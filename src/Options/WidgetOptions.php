@@ -137,7 +137,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataChrome($dataChrome)
     {
-        if (!is_string($dataChrome)) {
+        if (!is_string($dataChrome) && null !== $dataChrome) {
             throw new InvalidArgumentException('An string is expected for chrome parameter');
         }
 
@@ -161,7 +161,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setClass($class)
     {
-        if (!is_string($class)) {
+        if (!is_string($class) && null !== $class) {
             throw new InvalidArgumentException('String expected for class parameter');
         }
 
@@ -185,7 +185,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataAriaPolite($dataAriaPolite)
     {
-        if (!is_string($dataAriaPolite)) {
+        if (!is_string($dataAriaPolite) && null !== $dataAriaPolite) {
             throw new InvalidArgumentException('String expected for dataAriaPolite parameter');
         }
 
@@ -209,7 +209,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataBorderColor($dataBorderColor)
     {
-        if (!is_string($dataBorderColor)) {
+        if (!is_string($dataBorderColor) && null !== $dataBorderColor) {
             throw new InvalidArgumentException('String expected for dataBorderColor parameter');
         }
 
@@ -233,7 +233,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataLinkColor($dataLinkColor)
     {
-        if (!is_string($dataLinkColor)) {
+        if (!is_string($dataLinkColor) && null !== $dataLinkColor) {
             throw new InvalidArgumentException('String expected for dataLinkColor parameter');
         }
 
@@ -257,7 +257,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataRelated($dataRelated)
     {
-        if (!is_string($dataRelated)) {
+        if (!is_string($dataRelated) && null !== $dataRelated) {
             throw new InvalidArgumentException('String expected for dataRelated parameter');
         }
 
@@ -281,7 +281,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataTheme($dataTheme)
     {
-        if (!is_string($dataTheme)) {
+        if (!is_string($dataTheme) && null !== $dataTheme) {
             throw new InvalidArgumentException('String expected for dataTheme parameter');
         }
 
@@ -305,11 +305,11 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataTweetLimit($dataTweetLimit)
     {
-        if (!is_int($dataTweetLimit)) {
+        if (!is_int($dataTweetLimit) && null !== $dataTweetLimit) {
             throw new InvalidArgumentException('Integer expected for dataTweetLimit parameter');
         }
 
-        $this->dataTweetLimit = (int) $dataTweetLimit;
+        $this->dataTweetLimit = $dataTweetLimit;
 
         return $this;
     }
@@ -331,7 +331,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setDataWidgetId($dataWidgetId)
     {
-        if (!is_string($dataWidgetId)) {
+        if (!is_string($dataWidgetId) && null !== $dataWidgetId) {
             throw new InvalidArgumentException(
                 'String is expected for dataWidgetId (long int can lead to float conversion)'
             );
@@ -357,11 +357,11 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setHeight($height)
     {
-        if (!is_int($height)) {
+        if (!is_int($height) && null !== $height) {
             throw new InvalidArgumentException('Integer expected for height parameter');
         }
 
-        $this->height = (int) $height;
+        $this->height = $height;
 
         return $this;
     }
@@ -381,7 +381,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setHref($href)
     {
-        if (!is_string($href)) {
+        if (!is_string($href) && null !== $href) {
             throw new InvalidArgumentException('String expected for href parameter');
         }
 
@@ -405,7 +405,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setHrefText($hrefText)
     {
-        if (!is_string($hrefText)) {
+        if (!is_string($hrefText) && null !== $hrefText) {
             throw new InvalidArgumentException('String expected for hrefText parameter');
         }
 
@@ -429,7 +429,7 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setLanguage($language)
     {
-        if (!is_string($language)) {
+        if (!is_string($language) && null !== $language) {
             throw new InvalidArgumentException('String expected for language parameter');
         }
 
@@ -453,11 +453,11 @@ class WidgetOptions extends AbstractOptions implements WidgetOptionsInterface
      */
     public function setWidth($width)
     {
-        if (!is_int($width)) {
+        if (!is_int($width) && null !== $width) {
             throw new InvalidArgumentException('Integer expected for width parameter');
         }
 
-        $this->width = (int) $width;
+        $this->width = $width;
 
         return $this;
     }

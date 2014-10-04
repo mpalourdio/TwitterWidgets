@@ -39,6 +39,14 @@ class TimelineBuilderTest extends OptionsProvider
         $this->assertGreaterThan(0, strpos($userTimeline->renderWidget(false), 'class="customClass"'));
     }
 
+    public function testUnsetValuesAreNotRendered()
+    {
+        $this->widgetOptions->setClass(null);
+        $userTimeline = new TimelineBuilder($this->widgetOptions);
+
+        $this->assertEquals(0, strpos($userTimeline->renderWidget(false), 'class="customClass"'));
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */
