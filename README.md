@@ -20,7 +20,7 @@ PHP 5.5+ - Only Composer installation supported
 Installation
 ============
 Add to the **require** list of your composer.json
-```"mpalourdio/twitter-widgets" : "dev-master"```
+```"mpalourdio/twitter-widgets" : "0.*"```
 
 Usage
 =====
@@ -31,9 +31,9 @@ $userTimeline  = new TimelineBuilder($widgetOptions);
 echo $userTimeline->renderWidget();
 ```
 
-```$options``` can handle theses parameters :  https://dev.twitter.com/web/embedded-timelines#options
+```$options``` can handle these parameters :  https://dev.twitter.com/web/embedded-timelines#options
 
-Their PHP equivalent as array keys to use in the view helper are  :
+Their PHP equivalent as array keys to use in the ```$options``` array are  :
 
 ```php
 'class'           => 'A css class, by default it will be twitter-timeline',
@@ -54,9 +54,9 @@ Their PHP equivalent as array keys to use in the view helper are  :
 
 The ```TimelineBuilder#renderWidget()``` method accepts a boolean to disable the javascript code added to each widget. Useful if you have more that one widget to avoid JS overhead.
 
-When disabled, to add only one time the needed javascript to your HTML code, use [OneTimeJsProvider#getOneTimeWidgetJs()](https://github.com/mpalourdio/TwitterWidgets/blob/master/src/Assets/OneTimeJsProvider.php) just before your ```</body>```
+When disabled, to add only once the needed javascript to your HTML code, use [OneTimeJsProvider#getOneTimeWidgetJs()](https://github.com/mpalourdio/TwitterWidgets/blob/master/src/Assets/OneTimeJsProvider.php) just before your ```</body>```
 
-More informations here : https://dev.twitter.com/web/javascript/loading
+More information here : https://dev.twitter.com/web/javascript/loading
 
 ZF2
 ===
