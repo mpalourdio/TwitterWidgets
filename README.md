@@ -53,7 +53,7 @@ Their PHP equivalent as array keys to use in the ```$options``` array are  :
 'dataAriaPolite'  => 'polite or assertive',
 ```
 
-The ```TimelineBuilder#renderWidget()``` method accepts a boolean to disable the javascript code added to each widget. Useful if you have more that one widget to avoid JS overhead.
+The [TimelineBuilder#renderWidget()](https://github.com/mpalourdio/TwitterWidgets/blob/master/src/Timeline/TimelineBuilder.php#L60-L69) method accepts a boolean to disable the javascript code added to each widget. Useful if you have more that one widget to avoid JS overhead.
 
 When disabled, to add only once the needed javascript to your HTML code, use [OneTimeJsProvider#getOneTimeWidgetJs()](https://github.com/mpalourdio/TwitterWidgets/blob/master/src/Assets/OneTimeJsProvider.php) just before your ```</body>```
 
