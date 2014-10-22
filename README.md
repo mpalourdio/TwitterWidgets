@@ -20,8 +20,11 @@ PHP 5.5+ - Only Composer installation supported
 
 Installation
 ============
-Add to the **require** list of your composer.json
-```"mpalourdio/twitter-widgets" : "0.*"```
+Run the command below to install via Composer
+
+```shell
+composer require mpalourdio/twitter-widgets
+```
 
 Usage
 =====
