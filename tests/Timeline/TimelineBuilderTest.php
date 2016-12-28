@@ -26,7 +26,7 @@ class TimelineBuilderTest extends OptionsProvider
 
     public function testUserTimeline()
     {
-        $widgetOptions   = $this->getMock(WidgetOptions::class);
+        $widgetOptions   = $this->createMock(WidgetOptions::class);
         $timelineBuilder = new TimelineBuilder($widgetOptions);
 
         $this->assertInstanceOf(TimelineBuilder::class, $timelineBuilder);
@@ -87,7 +87,7 @@ class TimelineBuilderTest extends OptionsProvider
      */
     public function testNonBoolThrowException()
     {
-        $widgetOptions   = $this->getMock(WidgetOptions::class);
+        $widgetOptions   = $this->createMock(WidgetOptions::class);
         $timelineBuilder = new TimelineBuilder($widgetOptions);
 
         $timelineBuilder->renderWidget('helloyesthisisdog');
@@ -95,7 +95,7 @@ class TimelineBuilderTest extends OptionsProvider
 
     public function testOneTimeJsReturnsNeededCode()
     {
-        $widgetOptions   = $this->getMock(WidgetOptions::class);
+        $widgetOptions   = $this->createMock(WidgetOptions::class);
         $timelineBuilder = new TimelineBuilder($widgetOptions);
 
         $reflected = new ReflectionClass(TimelineBuilder::class);
