@@ -3,8 +3,8 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgets/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgets/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c44e0d12-1786-4e89-ac2c-df1b90d2490d/mini.png)](https://insight.sensiolabs.com/projects/c44e0d12-1786-4e89-ac2c-df1b90d2490d)
 [![PHP 7.0+][ico-engine]][lang]
-
 [![MIT Licensed][ico-license]][license]
+
 [ico-engine]: http://img.shields.io/badge/php-7.0+-8892BF.svg
 [lang]: http://php.net
 [ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg
