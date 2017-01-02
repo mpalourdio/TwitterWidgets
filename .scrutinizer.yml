@@ -3,7 +3,7 @@ filter:
     - src/Options/*
 
 before_commands:
-    - "composer update --prefer-source"
+    - "composer install"
 
 tools:
     external_code_coverage: true
