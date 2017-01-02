@@ -2,10 +2,10 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgets/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgets/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgets/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgets/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c44e0d12-1786-4e89-ac2c-df1b90d2490d/mini.png)](https://insight.sensiolabs.com/projects/c44e0d12-1786-4e89-ac2c-df1b90d2490d)
-[![PHP 5.6+][ico-engine]][lang]
+[![PHP 7.0+][ico-engine]][lang]
 
 [![MIT Licensed][ico-license]][license]
-[ico-engine]: http://img.shields.io/badge/php-5.6+-8892BF.svg
+[ico-engine]: http://img.shields.io/badge/php-7.0+-8892BF.svg
 [lang]: http://php.net
 [ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg
 [license]: LICENSE
@@ -17,7 +17,7 @@ PHP library that helps rendering twitter embedded timelines
 
 Requirements
 ============
-PHP 5.6+ - Only Composer installation supported
+PHP 7.0+ - Only Composer installation supported
 
 Installation
 ============
