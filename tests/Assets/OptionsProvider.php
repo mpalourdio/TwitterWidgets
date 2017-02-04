@@ -10,7 +10,9 @@
 
 namespace TwitterWidgetsTest\Assets;
 
-class OptionsProvider extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class OptionsProvider extends TestCase
 {
     public function arrayProvider()
     {
