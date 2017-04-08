@@ -21,8 +21,8 @@
         "zendframework/zend-stdlib": "^2.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0.3",
-        "squizlabs/php_codesniffer": "^2.6.2"
+        "phpunit/phpunit": "^6.1",
+        "squizlabs/php_codesniffer": "^2.8"
     },
     "autoload": {
         "psr-4": {
